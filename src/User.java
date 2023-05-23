@@ -20,7 +20,7 @@ public class User {
         credit = 100;
     }
 
-    static void addNewUser(String password, String userName) {
+    static void addNewUser(String userName, String password) {
         if(loggedInUser != null)
             inputOutput.printer(CheckResult.INVALID_COMMAND);
         else if(getUser(userName) != null || userName.length() < 8)

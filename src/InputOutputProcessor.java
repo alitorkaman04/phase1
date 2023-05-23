@@ -15,8 +15,8 @@ public class InputOutputProcessor {
             System.out.println("Invalid Cost!");
             return true;
         }
-        if(a == CheckResult.NAME_ERROR) {
-            System.out.println("Invalid Name!");
+        if(a == CheckResult.ID_ERROR) {
+            System.out.println("Invalid id!");
             return true;
         }
         if(a == CheckResult.INVALID_COMMAND) {
