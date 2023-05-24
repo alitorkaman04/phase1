@@ -7,12 +7,11 @@ public class Main {
         Scanner sc = inputOutput.getScanner();
         Server.readDataFromServer();
 
-        //System.out.println(Owner.getOwners().get(0));
         while (true) {
             String[] dastoor = sc.nextLine().split(" ");
             if(dastoor[0].equals("exit")) {
                 Server server = new Server();
-                Server.saveDataToServer(server);
+                Server.writeDataToServer(server);
                 break;
             }
 
@@ -32,6 +31,8 @@ public class Main {
             else if(dastoor[0].equals("ADD") && dastoor[1].equals("NEW") && dastoor[2].equals("RESTAURANT"))
                 Restaurant.addNewRestaurant(dastoor[3], Integer.parseInt(dastoor[4]), dastoor[5]);
 
+            else if(dastoor[0].equals("SELECT") && dastoor[1].equals("MENU"))
+                Owner.selectMenu();
             else if(dastoor[0].equals("SELECT"))
                 Owner.selectRestaurant(Integer.parseInt(dastoor[1]));
             else if(dastoor[0].equals("SHOW") && dastoor[1].equals("LOCATION"))
@@ -51,7 +52,6 @@ public class Main {
                 Restaurant.deactiveFood(Integer.parseInt(dastoor[2]));
             else if(dastoor[0].equals("ACTIVE") && dastoor[1].equals("FOOD"))
                 Restaurant.activeFood(Integer.parseInt(dastoor[2]));
-
 
 
             else

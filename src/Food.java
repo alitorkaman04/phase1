@@ -43,4 +43,17 @@ public class Food {
     public int getId() {
         return id;
     }
+    public String getName() {
+        return name;
+    }
+    public boolean isActive() {
+        return isActive;
+    }
+    public Discount getDiscount() {
+        return discount;
+    }
+    public double getPrice() {
+        return price;
+    }
+
 }

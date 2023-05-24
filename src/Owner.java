@@ -40,7 +40,7 @@ public class Owner{
             loggedInOwner = getOwner(userName);
             inputOutput.printer(CheckResult.SUCCESSFUL);
             showRestaurantsList();
-            if(loggedInOwner.restaurants.size() == 1)
+            if(loggedInOwner.restaurants.size() >= 1)
                 Restaurant.selectRestaurant(loggedInOwner.restaurants.get(0).getId());
         }
     }
@@ -152,7 +152,7 @@ public class Owner{
         else {
             inputOutput.printer(CheckResult.SUCCESSFUL);
             loggedInOwner.selectedRestaurant.getMenu().add(new Food(name, price));
-            Food.getFoods().add((loggedInOwner.selectedRestaurant.getMenu().get(loggedInOwner.selectedRestaurant.getMenu().size()-1)));
+            Food.getFoods().add(new Food(name, price));
         }
     }
 
@@ -169,6 +169,20 @@ public class Owner{
             Food.getFoods().remove(loggedInOwner.selectedRestaurant.getFood(id));
         }
     }
+
+    public static void selectMenu() {
+        if(loggedInOwner == null)
+            inputOutput.printer(CheckResult.INVALID_COMMAND);
+        else if(loggedInOwner.selectedRestaurant == null)
+            inputOutput.printer(CheckResult.INVALID_COMMAND);
+        else {
+            for (int i = 0; i < loggedInOwner.selectedRestaurant.getMenu().size(); i++) {
+                Food food = loggedInOwner.selectedRestaurant.getMenu().get(i);
+                System.out.println(food.getName() + " " + food.getId() + " " + food.getPrice() + " " + food.getDiscount() + " " + food.isActive());
+            }
+        }
+    }
+
 
     public static void showRestaurantsList() {
         if(loggedInOwner == null)
@@ -188,6 +202,10 @@ public class Owner{
 
     static Owner getLoggedInOwner() {
         return loggedInOwner;
+    }
+
+    public String getUserName() {
+        return userName;
     }
 
     public static ArrayList<Owner> getOwners() {

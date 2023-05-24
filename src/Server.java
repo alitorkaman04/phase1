@@ -7,13 +7,20 @@ import java.util.ArrayList;
 
 public class Server {
     private ArrayList<Owner> owners;
+    private ArrayList<Costumer> costumers;
+    private ArrayList<Restaurant> restaurants;
+    private ArrayList<Food> foods;
+
     private static Gson gson = new Gson();
 
     public Server() {
-        this.owners = new ArrayList<>(Owner.getOwners());
+        owners = new ArrayList<>(Owner.getOwners());
+        restaurants = new ArrayList<>(Restaurant.getRestaurants());
+        costumers = new ArrayList<>(Costumer.getCostumers());
+        foods = new ArrayList<>(Food.getFoods());
     }
 
-    public static void saveDataToServer(Server server) {
+    public static void writeDataToServer(Server server) {
         String json = gson.toJson(server);
         try (FileWriter fileWriter = new FileWriter("server.json")) {
             fileWriter.write(json);
@@ -35,6 +42,14 @@ public class Server {
         }
         Server loadedServer = gson.fromJson(json, Server.class);
         Owner.getOwners().addAll(loadedServer.owners);
+        Costumer.getCostumers().addAll(loadedServer.costumers);
+        Restaurant.getRestaurants().addAll(loadedServer.restaurants);
+        Food.getFoods().addAll(loadedServer.foods);
+
+//        for (int i = 0; i < loadedServer.owners.size(); i++) {
+//            Restaurant.getRestaurants().addAll(loadedServer.owners.get(i).getRestaurants());
+//        }
+
     }
 
 }

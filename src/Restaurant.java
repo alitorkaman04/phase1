@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Restaurant implements Comparable<Restaurant>{
     private String name;
     private int id;
-    private Owner owner;
+    private String ownerUserName;
     private int location;
     private static Restaurant selectedRestaurant;
     private String foodType;
@@ -13,11 +13,11 @@ public class Restaurant implements Comparable<Restaurant>{
     final private static ArrayList<Restaurant> restaurants = new ArrayList<>();
     private static InputOutputProcessor inputOutput = InputOutputProcessor.getInstance();
 
-    public Restaurant(String name, Owner owner, int location, String foodType) {
+    public Restaurant(String name, String ownerUserName, int location, String foodType) {
         this.name = name;
         id = restaurants.size();
         this.location = location;
-        this.owner = owner;
+        this.ownerUserName = ownerUserName;
         this.foodType = foodType;
         menu = new ArrayList<>();
         orders = new ArrayList<>();
@@ -28,8 +28,8 @@ public class Restaurant implements Comparable<Restaurant>{
             inputOutput.printer(CheckResult.INVALID_COMMAND);
         else {
             inputOutput.printer(CheckResult.SUCCESSFUL);
-            restaurants.add(new Restaurant(name, Owner.getLoggedInOwner(), location, foodType));
-            Owner.getLoggedInOwner().getRestaurants().add(restaurants.get(restaurants.size()-1));
+            restaurants.add(new Restaurant(name, Owner.getLoggedInOwner().getUserName(), location, foodType));
+            Owner.getLoggedInOwner().getRestaurants().add(new Restaurant(name, Owner.getLoggedInOwner().getUserName(), location, foodType));
         }
     }
 
@@ -112,5 +112,9 @@ public class Restaurant implements Comparable<Restaurant>{
             return this.name.compareTo(restaurant.name);
         else
             return this.id-restaurant.id;
+    }
+
+    public static ArrayList<Restaurant> getRestaurants() {
+        return restaurants;
     }
 }

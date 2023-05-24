@@ -75,4 +75,7 @@ public class Costumer{
         return loggedInCostumer;
     }
 
+    public static ArrayList<Costumer> getCostumers() {
+        return costumers;
+    }
 }
