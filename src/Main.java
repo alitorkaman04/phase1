@@ -40,6 +40,12 @@ public class Main {
 
             else if(dastoor[0].equals("ADD") && dastoor[1].equals("FOOD"))
                 Owner.addNewFood(dastoor[2], Double.parseDouble(dastoor[3]));
+            else if(dastoor[0].equals("DELETE") && dastoor[1].equals("FOOD"))
+                Owner.deleteFood(Integer.parseInt(dastoor[2]));
+            else if(dastoor[0].equals("DEACTIVE") && dastoor[1].equals("FOOD"))
+                Restaurant.deactiveFood(Integer.parseInt(dastoor[2]));
+            else if(dastoor[0].equals("ACTIVE") && dastoor[1].equals("FOOD"))
+                Restaurant.activeFood(Integer.parseInt(dastoor[2]));
 
 
 

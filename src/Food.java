@@ -28,8 +28,19 @@ public class Food {
         comments = new ArrayList<>();
     }
 
-    static void addNewFood(Food food) {
-        foods.add(food);
+    public static ArrayList<Food> getFoods() {
+        return foods;
     }
 
+    public void deactiveFood() {
+        isActive = false;
+    }
+    public void activeFood() {
+        isActive = true;
+    }
+
+
+    public int getId() {
+        return id;
+    }
 }

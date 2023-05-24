@@ -140,17 +140,32 @@ public class Owner{
                 inputOutput.printer(CheckResult.SUCCESSFUL);
                 loggedInOwner.selectedRestaurant.editFoodType(foodType);
             }
-
         }
     }
 
     static void addNewFood(String name, double price) {
-        if(loggedInOwner != null)
+        if(loggedInOwner == null)
+            inputOutput.printer(CheckResult.INVALID_COMMAND);
+        else if(loggedInOwner.selectedRestaurant == null)
             inputOutput.printer(CheckResult.INVALID_COMMAND);
         else {
             inputOutput.printer(CheckResult.SUCCESSFUL);
             loggedInOwner.selectedRestaurant.getMenu().add(new Food(name, price));
-            Food.addNewFood(loggedInOwner.selectedRestaurant.getMenu().get(loggedInOwner.selectedRestaurant.getMenu().size()-1));
+            Food.getFoods().add((loggedInOwner.selectedRestaurant.getMenu().get(loggedInOwner.selectedRestaurant.getMenu().size()-1)));
+        }
+    }
+
+    static void deleteFood(int id) {
+        if(loggedInOwner == null)
+            inputOutput.printer(CheckResult.INVALID_COMMAND);
+        else if(loggedInOwner.selectedRestaurant == null)
+            inputOutput.printer(CheckResult.INVALID_COMMAND);
+        else if(loggedInOwner.selectedRestaurant.getFood(id) == null)
+            inputOutput.printer(CheckResult.ID_ERROR);
+        else {
+            inputOutput.printer(CheckResult.SUCCESSFUL);
+            loggedInOwner.selectedRestaurant.getMenu().remove(loggedInOwner.selectedRestaurant.getFood(id));
+            Food.getFoods().remove(loggedInOwner.selectedRestaurant.getFood(id));
         }
     }
 
@@ -164,6 +179,10 @@ public class Owner{
                 System.out.println(list.get(i).getName() + " " + list.get(i).getId());
             }
         }
+    }
+
+    public Restaurant getSelectedRestaurant() {
+        return selectedRestaurant;
     }
 
     static Owner getLoggedInOwner() {

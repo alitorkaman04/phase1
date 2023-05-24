@@ -65,6 +65,47 @@ public class Restaurant implements Comparable<Restaurant>{
         return menu;
     }
 
+    Food getFood(int id) {
+        int d = 0;
+        boolean check = false;
+        for (int i = 0; i < menu.size(); i++) {
+            if(menu.get(i).getId() == id) {
+                d = i;
+                check = true;
+                break;
+            }
+        }
+        if(check)
+            return menu.get(d);
+        return null;
+    }
+
+    public static void deactiveFood(int id) {
+        if(Owner.getLoggedInOwner() == null)
+            inputOutput.printer(CheckResult.INVALID_COMMAND);
+        else if(Owner.getLoggedInOwner().getSelectedRestaurant() == null)
+            inputOutput.printer(CheckResult.INVALID_COMMAND);
+        else if(Owner.getLoggedInOwner().getSelectedRestaurant().getFood(id) == null)
+            inputOutput.printer(CheckResult.ID_ERROR);
+        else {
+            inputOutput.printer(CheckResult.SUCCESSFUL);
+            Owner.getLoggedInOwner().getSelectedRestaurant().getFood(id).deactiveFood();
+        }
+    }
+
+    public static void activeFood(int id) {
+        if(Owner.getLoggedInOwner() == null)
+            inputOutput.printer(CheckResult.INVALID_COMMAND);
+        else if(Owner.getLoggedInOwner().getSelectedRestaurant() == null)
+            inputOutput.printer(CheckResult.INVALID_COMMAND);
+        else if(Owner.getLoggedInOwner().getSelectedRestaurant().getFood(id) == null)
+            inputOutput.printer(CheckResult.ID_ERROR);
+        else {
+            inputOutput.printer(CheckResult.SUCCESSFUL);
+            Owner.getLoggedInOwner().getSelectedRestaurant().getFood(id).activeFood();
+        }
+    }
+
     @Override
     public int compareTo(Restaurant restaurant) {
         if(this.name.compareTo(restaurant.name) != 0)
