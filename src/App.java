@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.List;
 
 public class App {
     private static ArrayList<App> apps = new ArrayList<>();
@@ -41,8 +40,8 @@ public class App {
     static void newApp(String name, int cost, Category category) {
         if(User.getLoggedInUser() == null)
             inputOutput.printer(CheckResult.INVALID_COMMAND);
-        else if(name.length() < 5 || getApp(name) != null)
-            inputOutput.printer(CheckResult.NAME_ERROR);
+//        else if(name.length() < 5 || getApp(name) != null)
+//            inputOutput.printer(CheckResult.NAME_ERROR);
         else if(cost < 0)
             inputOutput.printer(CheckResult.COST_ERROR);
         else {

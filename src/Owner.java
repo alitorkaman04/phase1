@@ -15,6 +15,7 @@ public class Owner{
         this.userName = userName;
         selectedRestaurant = null;
         restaurants = new ArrayList<>();
+
     }
     static void addNewOwner(String userName, String password) {
         if(loggedInOwner != null)
@@ -187,5 +188,9 @@ public class Owner{
 
     static Owner getLoggedInOwner() {
         return loggedInOwner;
+    }
+
+    public static ArrayList<Owner> getOwners() {
+        return owners;
     }
 }

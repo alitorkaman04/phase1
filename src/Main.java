@@ -1,16 +1,21 @@
-import java.io.*;
-import java.util.ArrayList;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws IOException {
         InputOutputProcessor inputOutput = InputOutputProcessor.getInstance();
         Scanner sc = inputOutput.getScanner();
+        Server.readDataFromServer();
 
+        //System.out.println(Owner.getOwners().get(0));
         while (true) {
             String[] dastoor = sc.nextLine().split(" ");
-            if(dastoor[0].equals("exit"))
+            if(dastoor[0].equals("exit")) {
+                Server server = new Server();
+                Server.saveDataToServer(server);
                 break;
+            }
+
 
             else if(dastoor[0].equals("ADD") && dastoor[1].equals("COSTUMER"))
                 Costumer.addNewCostumer(dastoor[2], dastoor[3]);
