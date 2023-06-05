@@ -5,17 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0dab6bcc-675b-4ad7-b040-be03bf3992b5" name="Changes" comment="02/03/03">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/google_code_gson.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server2.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Ownerr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Graph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.json" beforeDir="false" afterPath="$PROJECT_DIR$/server.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CheckResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CheckResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Comment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Costumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Costumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Delivery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Delivery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Discount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Discount.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Food.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Food.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InputOutputProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputOutputProcessor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Owner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Owner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ownerr.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Path.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Path.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Rate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Rate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Restaurant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Restaurant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/User.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +81,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -85,7 +95,11 @@
       <updated>1684841339616</updated>
       <workItem from="1684841340879" duration="19386000" />
       <workItem from="1684934888903" duration="2495000" />
-      <workItem from="1684959839690" duration="9979000" />
+      <workItem from="1684959839690" duration="10149000" />
+      <workItem from="1685141507261" duration="3446000" />
+      <workItem from="1685314374405" duration="37059000" />
+      <workItem from="1685628696902" duration="206000" />
+      <workItem from="1685910836650" duration="6648000" />
     </task>
     <task id="LOCAL-00001" summary="checking">
       <created>1684842068038</created>
@@ -115,7 +129,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684937192514</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="02/03/03">
+      <created>1684971393249</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1684971393249</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

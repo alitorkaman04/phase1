@@ -1,18 +1,22 @@
-public enum Rate {
-    Like, Dislike;
+public class Rate {
+    private int rate;
+    private String userName;
 
-    Rate() {
+    public Rate(String userName, int rate) {
+        this.rate = rate;
+        this.userName = userName;
     }
-    static Rate stringToRate(String rate) {
-        if (rate.equals("Like"))
-            return Like;
-        else
-            return Dislike;
+
+    public int getRate() {
+        return rate;
     }
-//    public static Rate valueOf(String ) {
-//
-//    }
-//    public static Rate[] values() {
-//
-//    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setRate(int rate) {
+        this.rate = rate;
+    }
 }
+

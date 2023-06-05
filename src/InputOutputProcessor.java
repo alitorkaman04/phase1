@@ -31,6 +31,10 @@ public class InputOutputProcessor {
             System.out.println("Invalid Password!");
             return true;
         }
+        if(a == CheckResult.INVALID_PERCENT) {
+            System.out.println("Invalid Percent");
+            return true;
+        }
         if(a == CheckResult.USER_NAME_ERROR) {
             System.out.println("Invalid Username!");
             return true;

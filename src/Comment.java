@@ -1,21 +1,28 @@
 public class Comment {
-    private User user;
+    private String userName;
     private String comment;
-    private Rate rate;
+    private String message;
+    private int id;
 
-    public Comment(User user, String comment, Rate rate) {
-        this.user = user;
-        this.comment = comment.substring(1,comment.length()-1);
-        this.rate = rate;
+    public Comment(String userName, String comment) {
+        this.userName = userName;
+        this.comment = comment;
     }
-    public User getUser() {
-        return user;
-    }
-    public Rate getRate() {
-        return rate;
-    }
+
     public String getComment() {
         return comment;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 
 }

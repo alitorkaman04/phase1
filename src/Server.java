@@ -10,6 +10,7 @@ public class Server {
     private ArrayList<Costumer> costumers;
     private ArrayList<Restaurant> restaurants;
     private ArrayList<Food> foods;
+//    private ArrayList<Delivery> deliveries;
 
     private static Gson gson = new Gson();
 
@@ -18,6 +19,7 @@ public class Server {
         restaurants = new ArrayList<>(Restaurant.getRestaurants());
         costumers = new ArrayList<>(Costumer.getCostumers());
         foods = new ArrayList<>(Food.getFoods());
+//        deliveries = new ArrayList<>(Delivery.getDeliveries());
     }
 
     public static void writeDataToServer(Server server) {
@@ -43,8 +45,9 @@ public class Server {
         Server loadedServer = gson.fromJson(json, Server.class);
         Owner.getOwners().addAll(loadedServer.owners);
         Costumer.getCostumers().addAll(loadedServer.costumers);
-        Restaurant.getRestaurants().addAll(loadedServer.restaurants);
         Food.getFoods().addAll(loadedServer.foods);
+        Restaurant.getRestaurants().addAll(loadedServer.restaurants);
+//        Delivery.getDeliveries().addAll(loadedServer.deliveries);
 
 //        for (int i = 0; i < loadedServer.owners.size(); i++) {
 //            Restaurant.getRestaurants().addAll(loadedServer.owners.get(i).getRestaurants());
